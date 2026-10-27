@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>O Clarim Vespertino — Macdonoland fecha as portas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@900&family=Special+Elite&display=swap">
+<style>
+:root{
+  --paper:#d8d4bf; --paper2:#cbc6ae; --ink:#1b1a16; --muted:#55513f;
+  --rule:#1b1a16; --stamp:#9b1c1c; --photo-bg:#b9b5a0;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#1d1c18; --paper2:#26241f; --ink:#e3dcc4; --muted:#a39c84;
+    --rule:#e3dcc4; --stamp:#d65a4a; --photo-bg:#34322b;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#1d1c18; --paper2:#26241f; --ink:#e3dcc4; --muted:#a39c84;
+  --rule:#e3dcc4; --stamp:#d65a4a; --photo-bg:#34322b;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Old Standard TT","Times New Roman",Georgia,serif;
+  font-size:1.05rem; line-height:1.62;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(0,0,0,.07), transparent 55%),
+    radial-gradient(ellipse at 85% 90%, rgba(0,0,0,.09), transparent 50%);
+}
+.page{max-width:1020px; margin:0 auto; padding:1.2rem 1.1rem 2.5rem}
+
+/* Cabeçalho */
+.masthead{text-align:center; border-bottom:4px double var(--rule); padding-bottom:.7rem}
+.masthead h1{
+  font-family:"Playfair Display","Didot",Georgia,serif; font-weight:900;
+  font-size:clamp(2rem,8vw,4.2rem); line-height:1; margin:.2rem 0 .1rem; letter-spacing:.01em;
+}
+.dateline{
+  display:flex; flex-wrap:wrap; justify-content:space-between; gap:.3rem 1rem;
+  border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+  margin-top:.6rem; padding:.25rem .1rem; font-size:.85rem; font-style:italic;
+}
+
+/* Manchete */
+.headline{padding:1.1rem 0 .9rem; border-bottom:1px solid var(--rule); position:relative}
+.headline h2{
+  font-family:"Playfair Display",Georgia,serif; font-weight:900;
+  font-size:clamp(2.1rem,9.5vw,4.6rem); line-height:.98; margin:0 0 .6rem; text-wrap:balance;
+}
+.headline .sub{font-size:clamp(1.1rem,3.4vw,1.5rem); font-style:italic; line-height:1.3; margin:0 0 .7rem; max-width:48ch}
+.byline{font-family:"Special Elite","Courier New",monospace; font-size:.85rem; color:var(--muted); margin:0}
+.stamp{
+  position:absolute; right:.2rem; top:1rem; transform:rotate(-9deg);
+  font-family:"Special Elite","Courier New",monospace; font-size:clamp(.95rem,3vw,1.5rem);
+  color:var(--stamp); border:3px solid var(--stamp); padding:.15rem .6rem; opacity:.85;
+  letter-spacing:.08em; background:transparent; pointer-events:none;
+}
+@media (max-width:640px){ .stamp{position:static; display:inline-block; margin:0 0 .8rem} }
+
+/* Layout principal */
+.grid{display:grid; gap:1.6rem; grid-template-columns:1fr; padding-top:1.2rem}
+@media (min-width:900px){
+  .grid{grid-template-columns:minmax(0,2.1fr) minmax(0,1fr)}
+  .grid aside{border-left:1px solid var(--rule); padding-left:1.5rem}
+}
+
+/* Foto */
+figure{margin:0 0 1.2rem}
+figure svg{display:block; width:100%; height:auto; border:1px solid var(--rule); background:var(--photo-bg); filter:grayscale(1) contrast(1.05)}
+figcaption{font-size:.82rem; font-style:italic; color:var(--muted); margin-top:.35rem}
+
+/* Texto em colunas */
+.cols p{margin:0 0 .85rem; text-align:justify; hyphens:auto}
+.cols p:first-of-type::first-letter{
+  float:left; font-family:"Playfair Display",Georgia,serif; font-weight:900;
+  font-size:3.9em; line-height:.8; padding:.06em .08em 0 0;
+}
+@media (min-width:700px){
+  .cols{column-count:2; column-gap:1.8rem; column-rule:1px solid var(--rule)}
+}
+.pull{
+  column-span:all; margin:.4rem 0 1rem; padding:.6rem 0; text-align:center;
+  border-top:3px solid var(--rule); border-bottom:3px solid var(--rule);
+  font-family:"Playfair Display",Georgia,serif; font-weight:900; font-size:clamp(1.3rem,4vw,1.9rem); line-height:1.15;
+}
+
+/* Lateral */
+aside h3{
+  font-family:"Playfair Display",Georgia,serif; font-weight:900; font-size:1.3rem;
+  margin:0 0 .5rem; padding-bottom:.25rem; border-bottom:2px solid var(--rule);
+}
+.box{background:var(--paper2); border:1px solid var(--rule); padding:.9rem 1rem; margin-bottom:1.4rem}
+.box p{margin:0 0 .6rem; font-size:.95rem}
+.box p:last-child{margin-bottom:0}
+.timeline{list-style:none; margin:0; padding:0}
+.timeline li{padding:.55rem 0 .55rem .9rem; border-left:3px solid var(--rule); margin-left:.2rem; font-size:.95rem}
+.timeline li + li{margin-top:.1rem}
+.timeline b{font-family:"Special Elite","Courier New",monospace; font-weight:400; display:block; font-size:.85rem; color:var(--stamp)}
+.timeline li:last-child{border-left-color:var(--stamp)}
+
+/* Rodapé do jornal */
+.lower{display:grid; gap:1.4rem; grid-template-columns:1fr; border-top:4px double var(--rule); margin-top:1.8rem; padding-top:1.2rem}
+@media (min-width:760px){ .lower{grid-template-columns:1fr 1fr} }
+.letter{font-size:.95rem; margin:0 0 .9rem}
+.letter span{display:block; font-style:italic; color:var(--muted); font-size:.85rem; margin-top:.2rem}
+.ad{border:2px solid var(--rule); padding:.8rem 1rem; text-align:center; font-family:"Special Elite","Courier New",monospace; font-size:.92rem}
+.ad strong{display:block; font-family:"Playfair Display",Georgia,serif; font-weight:900; font-size:1.4rem; margin-bottom:.3rem}
+.cont{text-align:right; font-style:italic; font-size:.9rem; margin:1rem 0 0}
+footer{margin-top:1.6rem; padding-top:.7rem; border-top:1px solid var(--rule); text-align:center; font-size:.8rem; color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="masthead">
+  <h1>O Clarim Vespertino</h1>
+  <div class="dateline">
+    <span>Terça-feira, 17 de outubro de 1989</span>
+    <span>Ano LXII — Edição nº 18.402</span>
+    <span>Preço: NCz$ 2,00</span>
+  </div>
+</header>
+
+<section class="headline">
+  <div class="stamp">INTERDITADO</div>
+  <h2>Macdonoland fecha as portas</h2>
+  <p class="sub">Centro de treinamento de novos funcionários é interditado após série de desaparecimentos; polícia diz não ter provas, mas fala em indícios de sequestros e possíveis assassinatos</p>
+  <p class="byline">Por Aurélio Mendes Tavares, da editoria de polícia</p>
+</section>
+
+<div class="grid">
+  <main>
+    <figure>
+      <svg viewBox="0 0 520 260" role="img" aria-label="Fachada do centro de treinamento Macdonoland fechada com corrente, com uma única janela iluminada, na neblina">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#8d8d86"/><stop offset="1" stop-color="#cfcfc8"/>
+          </linearGradient>
+        </defs>
+        <rect width="520" height="260" fill="url(#sky)"/>
+        <rect x="40" y="70" width="440" height="162" fill="#2c2c27"/>
+        <rect x="40" y="70" width="440" height="48" fill="#17170f"/>
+        <text x="260" y="98" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="24" letter-spacing="4" fill="#d9d9d0">MACDONOLAND</text>
+        <text x="260" y="112" text-anchor="middle" font-family="Georgia,serif" font-size="9" letter-spacing="3" fill="#a8a89c">CENTRO DE TREINAMENTO</text>
+        <g fill="#4a4a43">
+          <rect x="60" y="132" width="34" height="22"/><rect x="108" y="132" width="34" height="22"/><rect x="156" y="132" width="34" height="22"/>
+          <rect x="330" y="132" width="34" height="22"/><rect x="378" y="132" width="34" height="22"/><rect x="426" y="132" width="34" height="22"/>
+          <rect x="60" y="168" width="34" height="22"/><rect x="108" y="168" width="34" height="22"/><rect x="156" y="168" width="34" height="22"/>
+          <rect x="330" y="168" width="34" height="22"/><rect x="426" y="168" width="34" height="22"/>
+        </g>
+        <rect x="378" y="168" width="34" height="22" fill="#e2dfb4"/>
+        <rect x="224" y="140" width="72" height="92" fill="#0e0e0b"/>
+        <line x1="260" y1="140" x2="260" y2="232" stroke="#3a3a34" stroke-width="2"/>
+        <rect x="0" y="176" width="520" height="84" fill="#e6e6df" opacity=".45"/>
+        <rect x="0" y="232" width="520" height="28" fill="#3d3d38"/>
+        <path d="M214 186 Q260 214 306 186" stroke="#d0d0c6" stroke-width="4" fill="none" stroke-dasharray="8 4"/>
+        <rect x="226" y="194" width="68" height="26" fill="#e8e8e0" stroke="#0e0e0b" stroke-width="2" transform="rotate(-3 260 207)"/>
+        <text x="260" y="212" text-anchor="middle" font-family="Courier New,monospace" font-weight="700" font-size="12" fill="#0e0e0b" transform="rotate(-3 260 207)">FECHADO</text>
+      </svg>
+      <figcaption>Fachada do centro de treinamento Macdonoland na manhã de ontem, com corrente no portão e lacre da polícia. Uma janela do alojamento ficou com a luz acesa a noite toda. (Foto: arquivo do jornal)</figcaption>
+    </figure>
+
+    <article class="cols">
+      <p>A rede de lanchonetes anunciou na noite de ontem o fechamento, por tempo indeterminado, do Macdonoland, o centro de treinamento onde jovens contratados, os chamados “treineiros”, cumprem a primeira etapa de formação antes de serem transferidos para as lanchonetes da rede. O anúncio veio poucas horas depois de a polícia civil interditar o prédio, por precaução, para apurar o desaparecimento de ao menos onze treineiros em catorze meses.</p>
+      <p>O delegado Hélio Brandão, responsável pelo inquérito, confirmou que nenhum corpo foi localizado e que ninguém foi preso. Ainda assim, disse que as hipóteses de sequestro e de homicídio não podem ser descartadas, e que a soma de relatos e coincidências levou à interdição.</p>
+      <p class="pull">“Não temos provas. Temos indícios demais para ignorar.”</p>
+      <p>O primeiro indício é o padrão: todos os onze desaparecidos estavam no fim do treinamento e haviam sido avisados de que seriam “transferidos” para uma lanchonete. Segundo gerentes ouvidos pela polícia, nenhum deles chegou a se apresentar no destino. A rede afirma que os jovens pediram demissão.</p>
+      <p>Familiares de três treineiros dizem que as cartas de demissão não parecem ter sido escritas por eles. “Meu filho ligou na véspera dizendo que passaria pela etapa final. Nunca mais ligou, e a carta que me mostraram nem tinha a letra dele”, afirmou Marlene Duarte, 52 anos, que esteve ontem em frente ao portão.</p>
+      <p>Ex-treineiros relatam que a “etapa final” seria uma avaliação feita à noite, em uma sala sem janelas, sobre a qual eram orientados a não falar. A rede nega que essa etapa exista. A polícia ainda não teve acesso completo ao subsolo do prédio, que consta na planta como “depósito”. O delegado não quis dizer o que espera encontrar.</p>
+      <p>Moradores da vizinhança contam que as luzes do alojamento ficavam acesas até de madrugada e que um caminhão sem identificação saía pelos fundos por volta das três horas. Ex-treineiros afirmam que as portas dos quartos eram trancadas por fora durante a noite. A administração diz que a medida era apenas “segurança do patrimônio”.</p>
+      <p>Até o fechamento desta edição, ninguém havia sido ouvido formalmente como suspeito. A polícia pede que ex-treineiros e familiares procurem a delegacia central.</p>
+    </article>
+    <p class="cont">Continua na página 5 — Lista dos desaparecidos e telefone para denúncias</p>
+  </main>
+
+  <aside>
+    <div class="box">
+      <h3>Cronologia do caso</h3>
+      <ul class="timeline">
+        <li><b>Agosto de 1988</b>Primeiro treineiro some depois de ser “transferido”; a rede registra pedido de demissão.</li>
+        <li><b>Dezembro de 1988</b>Mais dois somem no mesmo mês, ambos ao fim do treinamento.</li>
+        <li><b>Março de 1989</b>A rede atribui os casos a “desistências”.</li>
+        <li><b>Setembro de 1989</b>Famílias se reúnem e levam o caso à delegacia central.</li>
+        <li><b>15 de outubro</b>Polícia ouve ex-treineiros sobre a “etapa final” noturna.</li>
+        <li><b>16 de outubro</b>Macdonoland é interditado e fecha por tempo indeterminado.</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h3>Nota da rede</h3>
+      <p>“Lamentamos profundamente o ocorrido e nos solidarizamos com as famílias. Os treineiros desligados deixaram a empresa por vontade própria, conforme nossos registros. Fechamos o Macdonoland por precaução, para colaborar com as autoridades.”</p>
+      <p>O comunicado não explica por que as lanchonetes de destino não têm registro da chegada dos jovens.</p>
+    </div>
+  </aside>
+</div>
+
+<section class="lower">
+  <div>
+    <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:900;font-size:1.3rem;margin:0 0 .6rem;padding-bottom:.25rem;border-bottom:2px solid var(--rule)">Cartas dos leitores</h3>
+    <p class="letter">“Meu primo fez o treinamento no Macdonoland e me contou que à noite ninguém podia sair do alojamento. Achei exagero. Hoje não acho mais.”<span>— R. Souza, bairro Jardim das Acácias</span></p>
+    <p class="letter">“A prefeitura liberou o alvará do alojamento em 1987 sem vistoria completa. Alguém precisa responder por isso.”<span>— Dr. Ernesto Vilar, advogado</span></p>
+  </div>
+  <div>
+    <div class="ad">
+      <strong>Classificados</strong>
+      PRECISA-SE de jovens de 18 a 24 anos para treinamento remunerado, com alojamento. Tratar no Macdonoland, rua Quinze, 210.
+      <br><br><em>Anúncio suspenso a pedido da polícia.</em>
+    </div>
+  </div>
+</section>
+
+<footer>Edição fictícia criada para fins de entretenimento. Nomes, locais e acontecimentos são inventados.</footer>
+
+</div>
+</body>
+</html>
